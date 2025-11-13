@@ -33,9 +33,9 @@
 │ │ │ ├── __pycache__/        **Ignorada en el .gitignore** 
 │ │ │ ├── configurations/      <--- Configuraciones django (opcional) 
 │ │ │ │ ├── __pycache__/      **Ignorada en el .gitignore** 
+│ │ │ │ ├── base.py       <--- Configuraciones base 
 │ │ │ │ ├── local.py        <--- Configuraciones para desarrollo local 
 │ │ │ │ ├── production.py      <--- Configuraciones para produccion 
-│ │ │ │ ├── settings.py       <--- Configuraciones base 
 │ │ │ │ └── ... 
 │ │ │ ├── __init__.py 
 │ │ │ ├── asgi.py 
