@@ -13,8 +13,14 @@
     <title>
       {% block title_layout %} IA | BLOG {% endblock title_layout %}
     </title>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #cb0000ff;
+        --color-secondary: #aad90fff;
+      }
+    </style>
   </head>
-  <body class="bg-red-500 text-white">
+  <body class="min-w-[280px] bg-secondary">
     {% block content_layout %} {% endblock content_layout %}
   </body>
 </html>
