@@ -1,0 +1,8 @@
+<nav class="w-full flex justify-between bg-blue-500">
+  <a href="{% url 'home' %}">Incio</a>
+
+  <ul class="flex gap-4">
+    <li><a href="{% url 'post:post-list' %}">Ver Posts</a></li>
+    <a href="{% url 'user:user-profile' %}">Perfil</a>
+  </ul>
+</nav>
