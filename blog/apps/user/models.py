@@ -26,3 +26,19 @@ class User(AbstractUser):
     def get_avatar_url(self):
         if self.avatar:
             return self.avatar.url
+
+    """Puede crear, editar y eliminar sus propios comentarios"""
+    @property
+    def is_registered(self):
+        pass
+
+    """Puede crear y editar sus propios post"""
+    """Puede crear, editar y eliminar sus propios comentarios"""
+    """Puede eliminar los comentarios de otros usuarios en sus propios post"""
+    @property
+    def is_collaborator(self):
+        pass
+
+    @property
+    def is_admin(self):
+        pass
