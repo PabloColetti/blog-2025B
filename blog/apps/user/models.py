@@ -30,15 +30,15 @@ class User(AbstractUser):
     """Puede crear, editar y eliminar sus propios comentarios"""
     @property
     def is_registered(self):
-        pass
+        return self.groups.filter(name="registered").exists()
 
     """Puede crear y editar sus propios post"""
     """Puede crear, editar y eliminar sus propios comentarios"""
     """Puede eliminar los comentarios de otros usuarios en sus propios post"""
     @property
     def is_collaborator(self):
-        pass
+        return self.groups.filter(name="collaborator").exists()
 
     @property
-    def is_admin(self):
-        pass
+    def is_moderator(self):
+        return self.groups.filter(name="moderator").exists()
