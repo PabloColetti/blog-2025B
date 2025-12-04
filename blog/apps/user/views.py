@@ -10,7 +10,7 @@ class UserProfileView(TemplateView):
 
 
 class LoginView(LoginViewDjango):
-    template_name = 'auth/auth-login.html'
+    template_name = 'auth/auth-login.html' # TODO: Definir html
     form_class = LoginForm
     success_url = reverse_lazy('home')
 
