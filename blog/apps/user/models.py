@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 import uuid
@@ -17,7 +18,7 @@ class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     alias = models.CharField(max_length=30, blank=True)
     avatar = models.ImageField(
-        upload_to=get_avatar_filename, default="user/default/avatar-default.png"
+        upload_to=get_avatar_filename, default=settings.AVATAR_DEFAULT_IMAGE
     )
 
     def __str__(self):
