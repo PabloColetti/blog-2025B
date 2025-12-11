@@ -1,8 +1,23 @@
-<nav class="w-full flex justify-between bg-blue-500">
-  <a href="{% url 'home' %}">Incio</a>
-
-  <ul class="flex gap-4">
-    <li><a href="{% url 'post:post-list' %}">Ver Posts</a></li>
-    <a href="{% url 'user:user-profile' %}">Perfil</a>
+<nav>
+  <ul class="flex items-center gap-4">
+    {% if user.is_authenticated %}
+      {% if user.is_collaborator %}
+        <li><a href="#">Publicar</a></li>
+      {% endif %}
+      <li>
+        <a href="{% url 'user:user-profile' %}">
+          <img src="{{ user.avatar.url }}" alt="avatar" class="w-12 aspect-square rounded-full">
+        </a>
+      </li>
+      <li>
+        <form action="{% url 'user:auth-logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit">Cerrar sesión</button>
+        </form>
+      </li>
+    {% else %}
+      <li><a href="{% url 'user:auth-login' %}">Iniciar sesión</a></li>
+      <li><a href="{% url 'user:auth-register' %}">Registrarse</a></li>
+    {% endif %}
   </ul>
 </nav>
