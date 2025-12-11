@@ -1,14 +1,13 @@
 {% extends 'layouts/base-layout.html' %}
 
 {% block title_layout %}
-  IA |
-  {% block title %} Inicia sesión {% endblock title %}
-    
+  IA | {% block title %} BLOG {% endblock title %}
 {% endblock title_layout %}
 
 {% block content_layout %}
-  
-  {% block content %} ⚠️ carga un contenido {% endblock content %}
-  
-  {% include 'components/commons/footer.html' %}
+  <main class="flex justify-center min-h-dvh mx-4 md:mx-8 lg:mx-40 bg-orange-400">
+    <div class="container flex justify-center items-center bg-gray-700 text-black dark:text-white">
+      {% block content %} ⚠️ carga un contenido {% endblock content %}
+    </div>
+  </main>
 {% endblock content_layout %}
